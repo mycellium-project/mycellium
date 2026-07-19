@@ -1,0 +1,24 @@
+{
+  "name": "@mycellium/spora-server",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "lint": "oxlint --deny-warnings",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "docker:build": "docker build -t spora-server .",
+    "docker:run": "docker run -p 3001:3001 spora-server"
+  },
+  "dependencies": {
+    "@mycellium/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  }
+}
