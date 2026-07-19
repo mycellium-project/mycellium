@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import fs from 'node:fs';
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/mycellium/' : '/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
